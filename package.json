@@ -1,8 +1,8 @@
 {
-  "name": "EmojiHubBot",
+  "name": "ThonkBot",
   "version": "1.0.0",
   "main": "src/bot.js",
-  "repository": "https://github.com/Pneuma714/EmojiHubBot.git",
+  "repository": "https://github.com/Pneuma714/ThonkBot.git",
   "author": "Pneuma <syca0714@gmail.com>",
   "license": "MIT",
   "dependencies": {
