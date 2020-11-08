@@ -5,6 +5,9 @@
   "repository": "https://github.com/Pneuma714/ThonkBot.git",
   "author": "Pneuma <syca0714@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  },
   "dependencies": {
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0"
