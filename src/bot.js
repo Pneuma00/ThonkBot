@@ -59,7 +59,16 @@ client.on('message', async msg => {
         if (emoji === undefined) return msg.reply(`The emoji with ID ${id} doesn't exist.`)
         if (emoji.category === 9 && !msg.channel.nsfw) return msg.reply(`You can only view this emoji in NSFW channel.`) 
 
-        msg.channel.send(require('./func').emojiToEmbed(emoji))
+        const embed = require('./func').emojiToEmbed(emoji)
+        const dialog = await msg.channel.send(embed)
+
+        dialog.react('✅')
+        const filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === msg.author.id
+        dialog.awaitReactions(filter, { max: 1, time: 30000 })
+            .then(collected => {
+                msg.guild.emojis.create(emoji.image, emoji.title)
+                msg.reply(`Added :${emoji.title}: to your server!`)
+            }).catch(e => {})
     }
 })
 
