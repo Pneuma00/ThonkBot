@@ -34,6 +34,7 @@ client.on('message', async msg => {
     
     if (commandName === 'all') {
         msg.reply(`There is total ${data.emojis.length} emojis.`)
+        msg.channel.send(require('./func').emojiListToEmbed(data.emojis, 1))
     }
 
     else if (commandName === 'category') {
