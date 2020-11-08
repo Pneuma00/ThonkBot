@@ -9,10 +9,10 @@ module.exports = {
         return embed
     },
     emojiListToEmbed(emojiList, page) {
-        const embed = new Discord.MessageEmbed()
+        const embed = new Discord.MessageEmbed().setDescription('')
         for (let i = 0; i < 10; i++) {
             const index = (page - 1) * 10 + (i + 1)
-            embed.description += `${index}. \`${emojiList[index - 1].title}\``
+            embed.description += `${index}. \`${emojiList[index - 1].title}\`\n`
         }
         return embed
     }
